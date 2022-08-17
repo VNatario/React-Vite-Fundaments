@@ -25,7 +25,6 @@ export function Home() {
       try {
         const response = await fetch("https://api.github.com/users/VNatario");
         const data = await response.json();
-        console.log(data);
         setUser({
           name: data.name,
           avatar: data.avatar_url,
