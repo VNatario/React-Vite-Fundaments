@@ -16,12 +16,18 @@ export function Home() {
       }),
     };
 
-    setStudents((prevState) => [prevState, newStudent]);
+    setStudents((prevState) => [...prevState, newStudent]);
   }
 
   return (
     <div className="container">
-      <h1>Lista de P resença</h1>
+      <header>
+        <h1>Lista de Presença</h1>
+        <div>
+          <strong>Vitor</strong>
+          <img src="https://github.com/VNatario.png" alt="Foto de perfil" />
+        </div>
+      </header>
       <input
         type="text"
         placeholder="Digite o nome..."
@@ -32,7 +38,7 @@ export function Home() {
       </button>
 
       {students.map((student) => (
-        <Card name={student.name} time={student.time} />
+        <Card key={student.time} name={student.name} time={student.time} />
       ))}
     </div>
   );
