@@ -18,6 +18,7 @@ export function Home() {
     };
 
     setStudents((prevState) => [...prevState, newStudent]);
+    setStudentName("");
   }
 
   useEffect(() => {
@@ -48,6 +49,7 @@ export function Home() {
       <input
         type="text"
         placeholder="Digite o nome..."
+        value={studentName}
         onChange={(e) => setStudentName(e.target.value)}
       />
       <button type="burron" onClick={handleAddStudent}>
